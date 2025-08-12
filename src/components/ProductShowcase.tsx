@@ -238,14 +238,29 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
     }
   ];
 
-  const filteredProducts = products.filter(product => {
+
+  const [sortOption, setSortOption] = useState('relevance');
+  const [showAll, setShowAll] = useState(false);
+  const [modalImage, setModalImage] = useState<string | null>(null);
+
+  // Helper to extract the lower price as a number
+  const getLowerPrice = (price: string) => {
+    const match = price.match(/₹([\d,]+)/);
+    return match ? parseInt(match[1].replace(/,/g, '')) : 0;
+  };
+
+  let filteredProducts = products.filter(product => {
     const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          product.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
-  const [showAll, setShowAll] = useState(false);
+  if (sortOption === 'low') {
+    filteredProducts = [...filteredProducts].sort((a, b) => getLowerPrice(a.price) - getLowerPrice(b.price));
+  } else if (sortOption === 'high') {
+    filteredProducts = [...filteredProducts].sort((a, b) => getLowerPrice(b.price) - getLowerPrice(a.price));
+  }
 
   const productsToShow = showAll ? filteredProducts : filteredProducts.slice(0, 6);
 
@@ -265,10 +280,17 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
             </p>
           </div>
           <div className="flex items-center space-x-2">
-            <select className="border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white">
-              <option>Sort by Relevance</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
+            <select
+              className="border border-gray-300 rounded-lg px-3 py-2 text-sm bg-white"
+              value={sortOption}
+              onChange={e => {
+                const val = e.target.value;
+                setSortOption(val);
+              }}
+            >
+              <option value="relevance">Sort by Relevance</option>
+              <option value="low">Price: Low to High</option>
+              <option value="high">Price: High to Low</option>
             </select>
           </div>
         </div>
@@ -317,9 +339,27 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
                   >
                     Get Quote
                   </a>
-                  <button className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                  <button
+                    className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                    onClick={() => setModalImage(product.image)}
+                    aria-label={`View ${product.name} full image`}
+                  >
                     <Eye className="h-4 w-4 text-gray-600" />
                   </button>
+      {modalImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70" onClick={() => setModalImage(null)}>
+          <div className="relative max-w-3xl w-full mx-4" onClick={e => e.stopPropagation()}>
+            <button
+              className="absolute top-2 right-2 bg-white rounded-full p-2 shadow hover:bg-gray-100"
+              onClick={() => setModalImage(null)}
+              aria-label="Close full image"
+            >
+              ✕
+            </button>
+            <img src={modalImage} alt="Full Product" className="w-full h-auto max-h-[80vh] rounded-lg shadow-lg object-contain bg-white" />
+          </div>
+        </div>
+      )}
                 </div>
               </div>
             </div>
