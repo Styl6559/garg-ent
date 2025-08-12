@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import BannerSection from './components/BannerSection';
 import Navigation from './components/Navigation';
-import CompanyProfile from './components/CompanyProfile';
 import ProductShowcase from './components/ProductShowcase';
 import RatingsReviews from './components/RatingsReviews';
 import ContactSection from './components/ContactSection';
@@ -15,7 +14,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header 
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
       <BannerSection /> {/* Section 1 - Banner Image */}
       <main>
         <section>

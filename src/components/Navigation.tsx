@@ -16,12 +16,14 @@ const Navigation: React.FC<NavigationProps> = ({
 }) => {
   const categories = [
     { id: 'all', name: 'All Products' },
-    { id: 'industrial', name: 'Industrial Equipment' },
-    { id: 'machinery', name: 'Machinery' },
-    { id: 'electrical', name: 'Electrical Items' },
-    { id: 'automotive', name: 'Automotive Parts' },
-    { id: 'chemicals', name: 'Chemicals' },
-    { id: 'textiles', name: 'Textiles' }
+    { id: 'shade-net', name: 'Shade Net' },
+    { id: 'plastic-sheet', name: 'Plastic Sheet' },
+    { id: 'agriculture-net', name: 'Agriculture Net' },
+    { id: 'safety-agro-shade-net', name: 'Safety And Agro Shade Net' },
+    { id: 'plastic-granules', name: 'Plastic Granules' },
+    { id: 'hdpe-monofilament-granules', name: 'Hdpe monofilament granules' },
+    { id: 'ldpe-tarpaulin', name: 'LDPE Tarpaulin' },
+    { id: 'hdpe-tarpaulin', name: 'HDPE Tarpaulin' }
   ];
 
   return (

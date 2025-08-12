@@ -1,7 +1,12 @@
 import React from 'react';
-import { Search, MapPin, Phone, Mail } from 'lucide-react';
+import { Search } from 'lucide-react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery }) => {
   return (
     <header className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,6 +24,8 @@ const Header: React.FC = () => {
               </div>
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Search for products, services & suppliers"
               />
