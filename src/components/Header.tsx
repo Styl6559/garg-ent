@@ -33,9 +33,14 @@ const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery }) => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors">
+            <a
+              href="https://www.indiamart.com/garg-industries-india/enquiry.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center justify-center"
+            >
               Post Requirement
-            </button>
+            </a>
           </div>
         </div>
       </div>

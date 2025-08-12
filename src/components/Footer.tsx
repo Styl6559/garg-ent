@@ -7,7 +7,6 @@ const Footer: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 border-b border-gray-800 pb-6">
           <ul className="flex flex-col md:flex-row gap-2 md:gap-6 items-center text-sm">
-            <li><a href="#" className="hover:underline">About Us</a></li>
             <li><a href="#" className="hover:underline">Products & Services</a></li>
             <li><a href="#" className="hover:underline">Contact Us</a></li>
             <li><a href="#" className="hover:underline">Sitemap</a></li>

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Eye, Heart, Share2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Eye } from 'lucide-react';
 
 interface ProductShowcaseProps {
   searchQuery: string;
@@ -245,6 +245,10 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
     return matchesCategory && matchesSearch;
   });
 
+  const [showAll, setShowAll] = useState(false);
+
+  const productsToShow = showAll ? filteredProducts : filteredProducts.slice(0, 6);
+
   return (
     <section className="py-12 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -265,13 +269,12 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
               <option>Sort by Relevance</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
-              <option>Newest First</option>
             </select>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProducts.map((product) => (
+          {productsToShow.map((product) => (
             <div key={product.id} className="bg-white rounded-xl shadow-sm border hover:shadow-lg transition-shadow duration-300 group">
               <div className="relative overflow-hidden rounded-t-xl">
                 <img
@@ -279,21 +282,7 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
                   alt={product.name}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-3 right-3 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
-                    <Heart className="h-4 w-4 text-gray-600" />
-                  </button>
-                  <button className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors">
-                    <Share2 className="h-4 w-4 text-gray-600" />
-                  </button>
-                </div>
-                <div className="absolute top-3 left-3">
-                  <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full font-medium">
-                    ⭐ {product.rating}
-                  </span>
-                </div>
               </div>
-              
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                   {product.name}
@@ -301,7 +290,6 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
                 <p className="text-gray-600 text-sm mb-3 line-clamp-2">
                   {product.description}
                 </p>
-                
                 <div className="flex items-center justify-between mb-3">
                   <div className="text-blue-600 font-semibold">
                     {product.price}
@@ -310,11 +298,25 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
                     MOQ: {product.moq}
                   </div>
                 </div>
-                
                 <div className="flex space-x-2">
-                  <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium">
+                  <a
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium text-center flex items-center justify-center"
+                    href={
+                      product.category === 'shade-net' ? 'https://www.indiamart.com/garg-industries-india/shade-net.html' :
+                      product.category === 'plastic-sheet' ? 'https://www.indiamart.com/garg-industries-india/plastic-sheet.html' :
+                      product.category === 'agriculture-net' ? 'https://www.indiamart.com/garg-industries-india/agriculture-net.html' :
+                      product.category === 'safety-agro-shade-net' ? 'https://www.indiamart.com/garg-industries-india/safety-and-agro-shade-net.html' :
+                      product.category === 'plastic-granules' ? 'https://www.indiamart.com/garg-industries-india/plastic-granules.html' :
+                      product.category === 'hdpe-monofilament-granules' ? 'https://www.indiamart.com/garg-industries-india/hdpe-monofilament-granules.html' :
+                      product.category === 'ldpe-tarpaulin' ? 'https://www.indiamart.com/garg-industries-india/ldpe-tarpaulin.html' :
+                      product.category === 'hdpe-tarpaulin' ? 'https://www.indiamart.com/garg-industries-india/hdpe-tarpaulin.html' :
+                      '#'
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Get Quote
-                  </button>
+                  </a>
                   <button className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                     <Eye className="h-4 w-4 text-gray-600" />
                   </button>
@@ -332,11 +334,20 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
           </div>
         )}
 
-        <div className="mt-12 text-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg transition-colors font-medium">
-            View All Products
-          </button>
-        </div>
+        {filteredProducts.length > 6 && !showAll && (
+          <div className="mt-12 text-center">
+            <button onClick={() => setShowAll(true)} className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg transition-colors font-medium">
+              View All Products
+            </button>
+          </div>
+        )}
+        {showAll && filteredProducts.length > 6 && (
+          <div className="mt-6 text-center">
+            <button onClick={() => setShowAll(false)} className="bg-gray-200 hover:bg-gray-300 text-gray-700 py-2 px-6 rounded-lg transition-colors font-medium">
+              Show Less
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
