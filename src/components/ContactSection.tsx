@@ -19,7 +19,7 @@ const ContactSection: React.FC = () => {
             <div>
               <div className="font-bold">Garg Enterprise</div>
               <div>Gat No 1605, Near Choudhary Dhaba, Chikhali, Pune-411062, Maharashtra, India</div>
-              <a href="https://www.google.co.in/maps/dir//18.69525100,73.79871800" target="_blank" rel="noopener noreferrer" className="text-yellow-200 underline text-sm">Get Directions</a>
+              <a href="https://www.google.co.in/maps/dir//18.68769000,73.80333000" target="_blank" rel="noopener noreferrer" className="text-yellow-200 underline text-sm">Get Directions</a>
             </div>
           </div>
           <div className="flex items-center gap-2 mb-2">
