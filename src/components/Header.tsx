@@ -29,9 +29,6 @@ const Header: React.FC = () => {
             <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors">
               Post Requirement
             </button>
-            <button className="text-blue-700 hover:text-blue-800 px-3 py-2 rounded-lg transition-colors">
-              Sign In
-            </button>
           </div>
         </div>
       </div>
