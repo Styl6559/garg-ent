@@ -14,7 +14,7 @@ const CompanyProfile: React.FC = () => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center space-x-2 mb-2">
-                  <h1 className="text-3xl font-bold text-gray-900">Garg Enterprise</h1>
+                  <h1 className="text-3xl font-bold text-gray-900">Garg Industries</h1>
                   <CheckCircle className="h-6 w-6 text-green-500" />
                 </div>
                 <div className="flex items-center space-x-4 text-gray-600 mb-3">

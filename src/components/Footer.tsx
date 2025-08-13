@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors"><Instagram className="h-6 w-6" /></a>
           </div>
         </div>
-        <div className="text-center text-gray-400 text-xs mt-6">© {new Date().getFullYear()} Garg Enterprise. All rights reserved.</div>
+        <div className="text-center text-gray-400 text-xs mt-6">© {new Date().getFullYear()} Garg Industries. All rights reserved.</div>
       </div>
     </footer>
   );

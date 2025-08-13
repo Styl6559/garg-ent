@@ -13,8 +13,7 @@ const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery }) => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center gap-3">
-              <img src="/logo.png" alt="Garg Enterprise Logo" className="h-12 w-12 object-contain" />
-              <h1 className="text-2xl font-bold text-blue-700">Garg Enterprise</h1>
+              <img src="/logo2.png" alt="Garg Industries Logo" className="h-24 w-48 object-contain" />
             </div>
           </div>
           
