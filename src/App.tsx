@@ -23,8 +23,6 @@ function App() {
       <main>
         <section>
           <Navigation 
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
           />
