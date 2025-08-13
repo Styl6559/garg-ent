@@ -12,7 +12,8 @@ const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 flex items-center gap-3">
+              <img src="/logo.png" alt="Garg Enterprise Logo" className="h-12 w-12 object-contain" />
               <h1 className="text-2xl font-bold text-blue-700">Garg Enterprise</h1>
             </div>
           </div>
@@ -35,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery }) => {
           <div className="flex items-center space-x-4">
             <a
               href="#contact-form"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center justify-center"
+              className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg transition-colors flex items-center justify-center text-sm md:text-base"
               onClick={e => {
                 e.preventDefault();
                 document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
