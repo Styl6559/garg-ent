@@ -323,19 +323,13 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
                 <div className="flex space-x-2">
                   <a
                     className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium text-center flex items-center justify-center"
-                    href={
-                      product.category === 'shade-net' ? 'https://www.indiamart.com/garg-industries-india/shade-net.html' :
-                      product.category === 'plastic-sheet' ? 'https://www.indiamart.com/garg-industries-india/plastic-sheet.html' :
-                      product.category === 'agriculture-net' ? 'https://www.indiamart.com/garg-industries-india/agriculture-net.html' :
-                      product.category === 'safety-agro-shade-net' ? 'https://www.indiamart.com/garg-industries-india/safety-and-agro-shade-net.html' :
-                      product.category === 'plastic-granules' ? 'https://www.indiamart.com/garg-industries-india/plastic-granules.html' :
-                      product.category === 'hdpe-monofilament-granules' ? 'https://www.indiamart.com/garg-industries-india/hdpe-monofilament-granules.html' :
-                      product.category === 'ldpe-tarpaulin' ? 'https://www.indiamart.com/garg-industries-india/ldpe-tarpaulin.html' :
-                      product.category === 'hdpe-tarpaulin' ? 'https://www.indiamart.com/garg-industries-india/hdpe-tarpaulin.html' :
-                      '#'
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#contact-form"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('contact-form')?.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                    }}
                   >
                     Get Quote
                   </a>

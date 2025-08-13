@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import ProductShowcase from './components/ProductShowcase';
 import RatingsReviews from './components/RatingsReviews';
 import ContactSection from './components/ContactSection';
+import ContactUsForm from './components/ContactUsForm';
 import Footer from './components/Footer';
 
 function App() {
@@ -32,8 +33,9 @@ function App() {
             selectedCategory={selectedCategory}
           />
         </section>
+        <ContactUsForm /> {/* Section 4 - Contact Us */}
         <RatingsReviews /> {/* Section 3 - Ratings and Reviews */}
-        <ContactSection /> {/* Section 4 - Contact Details Banner */}
+        <ContactSection /> {/* Contact Details Banner */}
       </main>
       <Footer />
     </div>

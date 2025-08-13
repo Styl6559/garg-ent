@@ -1,12 +1,7 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Award, Users, Package } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
-  const stats = [
-    { icon: Award, label: 'Years of Experience', value: '15+' },
-    { icon: Users, label: 'Happy Clients', value: '500+' },
-    { icon: Package, label: 'Products Delivered', value: '10K+' }
-  ];
 
   return (
     <section className="w-full bg-blue-700 py-12">
@@ -31,8 +26,18 @@ const ContactSection: React.FC = () => {
             <span className="bg-blue-900 px-2 py-0.5 rounded text-xs font-semibold">88% Call Response Rate</span>
           </div>
           <div className="flex items-center gap-4">
-            <button className="bg-yellow-400 text-blue-900 font-bold px-4 py-2 rounded hover:bg-yellow-300 transition">Send SMS</button>
-            <button className="bg-white text-blue-700 font-bold px-4 py-2 rounded hover:bg-blue-100 transition">Send Email</button>
+            <a
+              href="sms:+919876543210"
+              className="bg-yellow-400 text-blue-900 font-bold px-4 py-2 rounded hover:bg-yellow-300 transition"
+            >
+              Send SMS
+            </a>
+            <a
+              href="mailto:info@gargenterprise.com"
+              className="bg-white text-blue-700 font-bold px-4 py-2 rounded hover:bg-blue-100 transition"
+            >
+              Send Email
+            </a>
           </div>
         </div>
       </div>
