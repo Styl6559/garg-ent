@@ -87,7 +87,7 @@ const ContactUsForm: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Contact Form */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Form</h2>
             <p className="text-gray-600 mb-8">
               Ready to discuss your requirements? Send us a message and our team will get back to you within 24 hours.
             </p>

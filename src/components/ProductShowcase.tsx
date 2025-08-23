@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Eye } from 'lucide-react';
 
 interface ProductShowcaseProps {
@@ -321,18 +322,12 @@ const ProductShowcase: React.FC<ProductShowcaseProps> = ({ searchQuery, selected
                   </div>
                 </div>
                 <div className="flex space-x-2">
-                  <a
+                  <Link
+                    to="/contact"
                     className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium text-center flex items-center justify-center"
-                    href="#contact-form"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById('contact-form')?.scrollIntoView({ 
-                        behavior: 'smooth' 
-                      });
-                    }}
                   >
                     Get Quote
-                  </a>
+                  </Link>
                   <button
                     className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                     onClick={() => setModalImage(product.image)}

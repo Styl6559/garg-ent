@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -7,9 +8,9 @@ const Footer: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 border-b border-gray-800 pb-6">
           <ul className="flex flex-col md:flex-row gap-2 md:gap-6 items-center text-sm">
-            <li><a href="https://www.indiamart.com/garg-industries-india/profile.html" target="_blank" rel="noopener noreferrer" className="hover:underline">About Us</a></li>
-            <li><a href="https://www.indiamart.com/garg-industries-india/products-and-services.html" target="_blank" rel="noopener noreferrer" className="hover:underline">Products & Services</a></li>
-            <li><a href="#contact-form" className="hover:underline" onClick={e => { e.preventDefault(); document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' }); }}>Contact Us</a></li>
+            <li><Link to="/about" className="hover:underline" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link></li>
+            <li><Link to="/products" className="hover:underline" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Products & Services</Link></li>
+            <li><Link to="/contact" className="hover:underline" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Contact Us</Link></li>
             <li><a href="https://www.indiamart.com/garg-industries-india/sitenavigation.html" target="_blank" rel="noopener noreferrer" className="hover:underline">Sitemap</a></li>
             <li><a href="#" className="hover:underline">Download Brochure</a></li>
           </ul>
