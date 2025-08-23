@@ -2,12 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Garg Enterprise</title>
+    <title>Garg Industries</title>
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Hidden form for Netlify to detect during build -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <select name="productInterest">
+        <option value="Shade Net">Shade Net</option>
+        <option value="Plastic Sheet">Plastic Sheet</option>
+        <option value="Agriculture Net">Agriculture Net</option>
+        <option value="Safety And Agro Shade Net">Safety And Agro Shade Net</option>
+        <option value="Plastic Granules">Plastic Granules</option>
+        <option value="Hdpe monofilament granules">Hdpe monofilament granules</option>
+        <option value="LDPE Tarpaulin">LDPE Tarpaulin</option>
+        <option value="HDPE Tarpaulin">HDPE Tarpaulin</option>
+      </select>
+      <textarea name="message"></textarea>
+    </form>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
