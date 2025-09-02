@@ -1,5 +1,5 @@
 import React from 'react';
-import RatingsReviews from '../components/RatingsReviews';
+// ...existing code...
 
 const Gallery: React.FC = () => {
   const galleryImages = [
@@ -52,10 +52,7 @@ const Gallery: React.FC = () => {
         </div>
       </section>
 
-      {/* Client Testimonials */}
-      <section>
-        <RatingsReviews />
-      </section>
+  // ...existing code...
     </div>
   );
 };

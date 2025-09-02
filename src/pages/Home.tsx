@@ -1,5 +1,6 @@
 import React from 'react';
 import BannerSection from '../components/BannerSection';
+import RatingsReviews from '../components/RatingsReviews';
 
 const Home: React.FC = () => {
   return (
@@ -32,6 +33,41 @@ const Home: React.FC = () => {
               <p className="text-gray-600">Building lasting relationships through quality products and reliable service.</p>
             </div>
           </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {/* Products Section */}
+            <section className="mb-12">
+              <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center">Our Products</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                {[
+                  { title: 'Shade Net', img: '/1.jpeg' },
+                  { title: 'Plastic Sheet', img: '/11.jpeg' },
+                  { title: 'Agriculture Net', img: '/15.jpeg' },
+                  { title: 'Safety And Agro Shade Net', img: '/18.jpeg' },
+                  { title: 'Plastic Granules', img: '/19.jpeg' },
+                  { title: 'Hdpe monofilament granules', img: '/20.jpeg' },
+                  { title: 'LDPE Tarpaulin', img: '/21.jpeg' },
+                  { title: 'HDPE Tarpaulin', img: '/22.jpeg' }
+                ].map((product, idx) => (
+                  <a
+                    key={idx}
+                    href="/products"
+                    className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden cursor-pointer"
+                    title={product.title}
+                  >
+                    <img
+                      src={product.img}
+                      alt={product.title}
+                      className="w-full h-40 object-cover mb-4"
+                    />
+                    <div className="p-4 text-center">
+                      <h3 className="font-semibold text-gray-900 text-lg">{product.title}</h3>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </section>
+          <RatingsReviews />
         </div>
       </div>
     </div>

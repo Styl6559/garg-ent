@@ -114,7 +114,7 @@ const RatingsReviews: React.FC = () => {
           </div>
         </div>
         {/* Most Relevant Reviews */}
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {visibleReviews.map((review, idx) => (
             <div key={idx} className="bg-white p-6 rounded-lg shadow flex flex-col gap-2">
               <div className="flex items-center gap-2">

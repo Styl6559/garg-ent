@@ -1,6 +1,6 @@
 import React from 'react';
 import ContactUsForm from '../components/ContactUsForm';
-import ContactSection from '../components/ContactSection';
+// import ContactSection from '../components/ContactSection';
 
 const Contact: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
       </div>
       
       <ContactUsForm />
-      <ContactSection />
+      {/* <ContactSection /> */}
     </div>
   );
 };

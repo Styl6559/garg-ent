@@ -13,10 +13,11 @@ const Header: React.FC = () => {
     { name: 'Contact', href: '/contact' }
   ];
 
+  const isHome = location.pathname === '/';
   return (
-    <header className="bg-white shadow-sm border-b">
+    <header className={`${isHome ? 'absolute bg-transparent' : 'bg-white shadow-sm border-b'} top-0 left-0 w-full z-30`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center gap-3">
               <Link to="/">
@@ -34,7 +35,9 @@ const Header: React.FC = () => {
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   location.pathname === item.href
                     ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                    : isHome
+                      ? 'text-white hover:text-blue-600 hover:bg-transparent'
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
                 {item.name}
@@ -45,7 +48,7 @@ const Header: React.FC = () => {
           {/* Mobile Hamburger Menu */}
           <div className="lg:hidden relative">
             <button
-              className="p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+              className={`p-2 rounded-md focus:outline-none ${!isHome ? 'text-blue-700 hover:text-blue-900' : 'text-white hover:text-blue-200'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Open navigation menu"
             >
