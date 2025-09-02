@@ -1,149 +1,134 @@
 import React from 'react';
+import { Quote, Award, Users, Factory } from 'lucide-react';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      {/* Company History */}
-      <section className="mb-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">About Us</h1>
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-semibold text-blue-600 mb-6">Company Profile</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            <div>
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                <span className="font-semibold">Garg Industries</span>, established in <span className="font-semibold">2017</span>, is a leading Manufacturer, Wholesaler, and Supplier of LDPE Granules, Shade Net, PVC Tarpaulin, Safety Net, and more. With a modern manufacturing unit in Chikhali, Pimpri Chinchwad, Pune, Maharashtra, we serve thousands of customers across India, providing reliable plastic solutions for agricultural and industrial sectors.
-              </p>
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                Our company operates as a proprietorship under the leadership of CEO <span className="font-semibold">Sanket Garg</span>, with a dedicated team of 11 to 25 employees. We are committed to quality, innovation, and customer satisfaction, reflected in our <span className="font-semibold">ISO 9001:2015</span> and <span className="font-semibold">ISO 14001:2015</span> certifications. Our annual turnover ranges from ₹1.5 to ₹5 crore.
-              </p>
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                Garg Industries is recognized for its advanced manufacturing facilities, quality control laboratories, and 24/7 production capabilities. We pride ourselves on delivering high-quality products and building lasting relationships with our clients.
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <div className="w-40 h-40 bg-gray-200 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2022/4/ZI/LU/TI/18484447/whatsapp-image-2022-04-26-at-5-58-11-pm-1000x1000.jpeg" alt="Manufacturing Unit" className="object-cover w-full h-full" />
-              </div>
-              <div className="w-40 h-40 bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
-                <img src="https://5.imimg.com/data5/SELLER/Default/2022/4/OI/YA/UF/18484447/whatsapp-image-2022-04-26-at-5-53-26-pm-1000x1000.jpeg" alt="Warehouse" className="object-cover w-full h-full" />
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-2 text-blue-700">Key Facts</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li><span className="font-semibold">Nature of Business:</span> Manufacturer</li>
-                <li><span className="font-semibold">Legal Status:</span> Proprietorship</li>
-                <li><span className="font-semibold">CEO:</span> Sanket Garg</li>
-                <li><span className="font-semibold">Employees:</span> 11 to 25 People</li>
-                <li><span className="font-semibold">Annual Turnover:</span> ₹1.5 - ₹5 Crore</li>
-                <li><span className="font-semibold">GST No.:</span> 27AYJPG4068M1ZY</li>
-                <li><span className="font-semibold">Location:</span> Chikhali, Pimpri Chinchwad, Pune, Maharashtra</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-2 text-blue-700">Our Products</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>LDPE Granules</li>
-                <li>Shade Net</li>
-                <li>PVC Tarpaulin</li>
-                <li>Safety Net</li>
-                <li>Plastic Sheet</li>
-                <li>Agriculture Net</li>
-                <li>Plastic Granules</li>
-                <li>HDPE Monofilament Granules</li>
-              </ul>
-            </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section with Background Image */}
+      <section className="relative h-[70vh] bg-cover bg-center flex items-center justify-center" 
+               style={{backgroundImage: "url('https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')"}}>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50"></div>
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
+              10+ Years of Trusted Manufacturing
+            </h1>
+            <p className="text-lg text-gray-200">Building excellence in technical textiles since 2015</p>
           </div>
         </div>
       </section>
 
-      {/* Infrastructure and Manufacturing */}
-      <section className="mb-16">
-        <div className="bg-gray-50 rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-semibold text-green-600 mb-6">Infrastructure & Manufacturing Units</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Manufacturing Facilities</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>• 50,000 sq ft modern manufacturing facility</li>
-                <li>• Advanced plastic extrusion machines</li>
-                <li>• Automated cutting and packaging systems</li>
-                <li>• Quality control laboratories</li>
-                <li>• 24/7 production capabilities</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Production Capacity</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>• Shade nets: 1000+ tons annually</li>
-                <li>• Tarpaulins: 500+ tons annually</li>
-                <li>• Agriculture nets: 800+ tons annually</li>
-                <li>• Plastic granules: 2000+ tons annually</li>
-                <li>• Custom products on demand</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="mb-16">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-semibold text-purple-600 mb-6">Certifications & Recognitions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center p-4 bg-blue-50 rounded-lg">
-              <div className="text-4xl mb-2">🏆</div>
-              <h3 className="font-semibold">ISO 9001:2015</h3>
-              <p className="text-sm text-gray-600">Quality Management System</p>
-            </div>
-            <div className="text-center p-4 bg-green-50 rounded-lg">
-              <div className="text-4xl mb-2">🌿</div>
-              <h3 className="font-semibold">ISO 14001:2015</h3>
-              <p className="text-sm text-gray-600">Environmental Management</p>
-            </div>
-            <div className="text-center p-4 bg-purple-50 rounded-lg">
-              <div className="text-4xl mb-2">⭐</div>
-              <h3 className="font-semibold">Industry Excellence Award</h3>
-              <p className="text-sm text-gray-600">Best Manufacturer 2023</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Founder's Note */}
-      <section>
-        <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg shadow-lg p-8">
-          <h2 className="text-3xl font-semibold text-blue-800 mb-6">Note from the Founder</h2>
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="md:w-1/4">
-              <div className="w-32 h-32 bg-gray-300 rounded-full mx-auto flex items-center justify-center text-4xl">
-                👨‍💼
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Company Story */}
+        <section className="bg-white py-12 lg:py-16 mb-8 rounded-lg">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center mb-6">
+              <div className="bg-blue-600 p-3 rounded-full">
+                <Factory className="w-8 h-8 text-white" />
               </div>
-              <p className="text-center mt-4 font-semibold">Mr. Rajesh Kumar</p>
-              <p className="text-center text-sm text-gray-600">Founder & CEO</p>
             </div>
-            <div className="md:w-3/4">
-              <blockquote className="text-lg text-gray-700 italic leading-relaxed">
-                "When I started this company 15 years ago, my vision was simple - to create products 
-                that truly serve our customers' needs while maintaining the highest standards of quality. 
-                Today, I am proud to see how far we've come, but more importantly, I'm excited about 
-                the future we're building together.
-                <br/><br/>
-                Our success is built on three pillars: innovation in our products, integrity in our 
-                business practices, and dedication to our customers. Every product that leaves our 
-                facility carries with it our commitment to excellence and our promise of reliability.
-                <br/><br/>
-                As we continue to grow, we remain committed to sustainable manufacturing practices 
-                and contributing positively to our community. Thank you for being part of our journey."
-              </blockquote>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Our Journey</h2>
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              Founded in 2015, Garg Industries began its journey as a small manufacturing unit in Chikali with a vision to innovate and deliver quality in the technical textile industry. Over the years, consistent growth and commitment to excellence have transformed the company into a 44,500 sq. ft. state-of-the-art facility in Ambethan, Chakan, equipped with advanced infrastructure and modern quality systems.
+            </p>
+          </div>
+        </section>
+
+        {/* About Us Section */}
+        <section className="bg-gray-50 py-12 lg:py-16 mb-8 rounded-lg">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center mb-6">
+              <div className="bg-green-600 p-3 rounded-full">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">About Us</h2>
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              Today, a dedicated team of 40+ skilled professionals drives our operations, combining experience and innovation to serve diverse industry needs. Our journey reflects steady progress, resilience, and an enduring focus on building long-term partnerships.
+            </p>
+          </div>
+        </section>
+
+        {/* Founder Section */}
+        <section className="mb-16">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="text-center">
+                <div className="w-48 h-48 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                  <img src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Ankit Garg" className="object-cover w-full h-full" />
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900">Sankit</h3>
+                <p className="text-gray-600">Founder</p>
+              </div>
+              <div>
+                <blockquote className="text-lg text-gray-700 italic leading-relaxed">
+                  "For us, quality is not just a checkbox. It is the foundation of everything we do. Every package that leaves our facility carries our commitment to reliability and the trust our partners place in our company."
+                </blockquote>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Co-founder Section */}
+        <section className="mb-16">
+          <div className="bg-gray-50 rounded-lg shadow-lg p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="text-center">
+                <div className="w-48 h-48 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center overflow-hidden">
+                  <img src="https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Ankit Garg" className="object-cover w-full h-full" />
+                </div>
+                <h3 className="text-2xl font-semibold text-gray-900">Ankit</h3>
+                <p className="text-gray-600">Co-founder</p>
+              </div>
+              <div>
+                <blockquote className="text-lg text-gray-700 italic leading-relaxed">
+                  "Our journey has always been about pushing boundaries and redefining what's possible in textiles. To us, innovation means shaping solutions that are not only smarter and stronger but also sustainable for the industries of tomorrow."
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ISO Certification */}
+        <section className="mb-16">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="flex items-center justify-center gap-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">Recognised with ISO 9001:2015</h3>
+                <p className="text-gray-600">Quality Management System Certification</p>
+              </div>
+              <div className="w-24 h-24 bg-blue-100 rounded-lg flex items-center justify-center">
+                <span className="text-3xl font-bold text-blue-600">ISO</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Values Section */}
+        <section className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-8">Our Core Values</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="text-blue-600 text-3xl mb-4">🏭</div>
+                <h3 className="text-xl font-semibold mb-2">Quality</h3>
+                <p className="text-gray-600">Stringent checks and advanced infrastructure.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="text-green-600 text-3xl mb-4">🌱</div>
+                <h3 className="text-xl font-semibold mb-2">Innovation</h3>
+                <p className="text-gray-600">Continuous research and development for future ready solutions.</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md">
+                <div className="text-purple-600 text-3xl mb-4">🤝</div>
+                <h3 className="text-xl font-semibold mb-2">Customer satisfaction</h3>
+                <p className="text-gray-600">Tailored support for long lasting business partnerships.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
-
 export default AboutUs;

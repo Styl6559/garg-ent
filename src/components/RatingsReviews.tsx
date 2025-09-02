@@ -62,25 +62,36 @@ const RatingsReviews: React.FC = () => {
   const visibleReviews = showAll ? reviews : reviews.slice(0, 3);
 
   return (
-    <section className="py-16 bg-gray-50 border-t border-b">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 text-blue-700">Ratings & Reviews</h2>
-        {/* Overall rating and breakdown */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
-          <div className="flex flex-col items-center md:items-start">
-            <div className="flex items-center gap-2 mb-1">
-              <span className="text-yellow-500 font-bold text-3xl">4.1</span>
-              <span className="text-gray-700 font-medium text-lg">/ 5</span>
-              <span className="flex ml-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`h-6 w-6 ${i < 4 ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-                ))}
-              </span>
+    <section>
+      <div className="text-center mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Ratings & Reviews
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          Trusted by customers across India for quality products and reliable service
+        </p>
+      </div>
+
+      {/* Overall rating and breakdown */}
+      <div className="bg-white rounded-2xl shadow-sm p-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Overall Rating */}
+          <div className="text-center lg:text-left">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-2">
+              <span className="text-4xl font-bold text-gray-900">4.1</span>
+              <span className="text-xl text-gray-600">/ 5</span>
             </div>
-            <div className="text-gray-600 text-sm">18 Ratings</div>
+            <div className="flex justify-center lg:justify-start mb-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className={`h-6 w-6 ${i < 4 ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+              ))}
+            </div>
+            <div className="text-gray-600">Based on 18 ratings</div>
           </div>
-          <div className="flex-1 flex flex-col gap-2">
-            {/* Star breakdown */}
+
+          {/* Rating Breakdown */}
+          <div className="space-y-3">
+            <h3 className="font-semibold text-gray-900 mb-4">Rating Breakdown</h3>
             {[
               { star: 5, percent: 56 },
               { star: 4, percent: 11 },
@@ -88,56 +99,67 @@ const RatingsReviews: React.FC = () => {
               { star: 2, percent: 5 },
               { star: 1, percent: 17 },
             ].map(({ star, percent }) => (
-              <div key={star} className="flex items-center gap-2">
-                <span className="w-8 text-sm text-gray-700 font-medium">{star} star</span>
-                <div className="flex-1 bg-gray-200 rounded h-2 overflow-hidden">
-                  <div className={`bg-yellow-400 h-2`} style={{ width: `${percent}%` }}></div>
+              <div key={star} className="flex items-center gap-3">
+                <span className="w-12 text-sm text-gray-700 font-medium">{star} star</span>
+                <div className="flex-1 bg-gray-200 rounded-full h-2.5">
+                  <div className="bg-lime-500 h-2.5 rounded-full transition-all duration-300" style={{ width: `${percent}%` }}></div>
                 </div>
-                <span className="w-10 text-right text-sm text-gray-600">{percent}%</span>
+                <span className="w-12 text-right text-sm text-gray-600 font-medium">{percent}%</span>
               </div>
             ))}
           </div>
-          <div className="flex flex-col gap-2 min-w-[160px]">
-            <div className="font-semibold text-gray-700 mb-1">User Satisfaction</div>
-            <div className="flex items-center justify-between text-sm">
-              <span>Response</span>
-              <span className="font-bold text-blue-700">50%</span>
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <span>Quality</span>
-              <span className="font-bold text-blue-700">100%</span>
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <span>Delivery</span>
-              <span className="font-bold text-blue-700">100%</span>
+
+          {/* Satisfaction Metrics */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Customer Satisfaction</h3>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-gray-700">Response Rate</span>
+                <span className="font-bold text-lime-600">50%</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-700">Product Quality</span>
+                <span className="font-bold text-lime-600">100%</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-700">Delivery Performance</span>
+                <span className="font-bold text-lime-600">100%</span>
+              </div>
             </div>
           </div>
         </div>
-        {/* Most Relevant Reviews */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      </div>
+
+      {/* Customer Reviews */}
+      <div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Customer Reviews</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {visibleReviews.map((review, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-lg shadow flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-blue-700">{review.name}</span>
-                <span className="text-gray-400">|</span>
-                <span className="text-gray-600 text-sm">{review.location}</span>
+            <div key={idx} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 border border-gray-100">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-semibold text-gray-900">{review.name}</h4>
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className={`h-4 w-4 ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`h-5 w-5 ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-                ))}
+              <p className="text-gray-600 text-sm mb-2">{review.location}</p>
+              <div className="text-xs text-gray-500 bg-gray-50 rounded-lg px-3 py-2">
+                <div className="font-medium text-gray-700 mb-1">Product: {review.product}</div>
+                <div>Reviewed on {review.date}</div>
               </div>
-              <div className="text-gray-500 text-xs mb-1">{review.date} | Product Name : {review.product}</div>
             </div>
           ))}
         </div>
+
         {reviews.length > 3 && (
-          <div className="text-center mt-8">
+          <div className="text-center mt-10">
             <button
-              className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+              className="px-8 py-3 bg-lime-600 hover:bg-lime-700 text-white rounded-xl font-medium transition-all duration-300 transform hover:scale-100 shadow-lg"
               onClick={() => setShowAll((v) => !v)}
             >
-              {showAll ? 'Show Less' : 'Show More'}
+              {showAll ? 'Show Less Reviews' : 'Show More Reviews'}
             </button>
           </div>
         )}
